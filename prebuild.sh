@@ -47,8 +47,3 @@ make
 cd ../libbswabe-0.9
 ./configure
 make
-
-cd ..
-
-npm install
-cp build/Release/cp-abe.node .

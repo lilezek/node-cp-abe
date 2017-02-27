@@ -2,9 +2,11 @@
   "name": "node-cp-abe",
   "version": "0.0.0",
   "description": "CP-ABE wrapper for NodeJS",
-  "main": "\"\"",
+  "main": "cp-abe.node",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha jssrc/test/cpabe.js"
+    "test": "node_modules/mocha/bin/mocha jssrc/test/cpabe.js",
+    "preinstall": "./prebuild.sh",
+    "postinstall": "./postbuild.sh"
   },
   "repository": {
     "type": "git",
