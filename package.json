@@ -1,6 +1,6 @@
 {
   "name": "node-cp-abe",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "CP-ABE wrapper for NodeJS",
   "main": "cp-abe.node",
   "scripts": {
@@ -26,7 +26,9 @@
   "homepage": "https://github.com/ezequiel-umu/node-cp-abe#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.2.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
     "node-gyp": "^3.5.0"
   }
 }
