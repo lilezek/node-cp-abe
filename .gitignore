@@ -1,0 +1,10 @@
+node_modules/
+cpabe-0.11/
+libbswabe-0.9/
+pbc-0.5.14/
+build/
+pub_key
+master_key
+priv_key
+*.node
+*.cpabe
