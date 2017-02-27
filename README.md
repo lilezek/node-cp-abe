@@ -9,10 +9,10 @@ Before compiling those C libraries you should read this:
 
 http://stackoverflow.com/questions/17373306/error-in-linking-gmp-while-compiling-cpabe-package-from-its-source-code
 
-Also, you will to compile those libraries with `-fPIC` option (or equivalent) in
+Also, you must compile those libraries with `-fPIC` option (or equivalent) in
 order to be compatible with node-gyp.
 
-You should also delete or comment out the function `die`. You can find it
+You must delete too (or comment out) the function `die`. You can find it
 in `cpabe-0.11/common.c`.
 
 ## Compilation
@@ -25,8 +25,17 @@ pbc-0.5.14/.libs/libpbc.so
 /lib/x86_64-linux-gnu/libglib-2.0.so.0
 ```
 
+After that, you must use node-gyp to compile the module
+
 ```
 node-gyp configure
 node-gyp build
+```
+
+And you can check that bindings compiled correctly by executing the tests.
+
+```
 cp build/Release/cp-abe.node jssrc/
+npm install
+npm test
 ```
