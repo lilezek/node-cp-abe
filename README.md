@@ -5,15 +5,17 @@ project to work you will need `libswabe-0.9`, `pbc-0.5.14` and `cpabe-0.11`.
 
 ## Patches to bswabe, cpabe and pbc
 
-Before compiling those C libraries you should read this:
+Before compiling those C libraries this project applies these patches:
 
 http://stackoverflow.com/questions/17373306/error-in-linking-gmp-while-compiling-cpabe-package-from-its-source-code
 
-Also, you must compile those libraries with `-fPIC` option (or equivalent) in
+Also, those libraries will be compiled with `-fPIC` option (or equivalent) in
 order to be compatible with node-gyp.
 
-You must delete too (or comment out) the function `die`. You can find it
-in `cpabe-0.11/common.c`.
+The function `die` is commented out and header now uses `const char *` instead of
+`char *`.
+
+Every patch can be found at patches folder.
 
 ## Compilation
 
