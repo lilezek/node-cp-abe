@@ -11,10 +11,9 @@
 #include <glib.h>
 #include <pbc/pbc.h>
 
-#include <cpabe.h>
-#include <common.h>
 
 extern "C" {
+  #include <common.h>
   #include <bswabe.h>
   #include <policy_lang.h>
 }

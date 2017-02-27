@@ -1,0 +1,4 @@
+24c24
+< void die(const char* fmt, ...);
+---
+> void die(char* fmt, ...);

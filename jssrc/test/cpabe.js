@@ -1,6 +1,5 @@
-const cpabe = require('../cp-abe');
+const cpabe = require('../../cp-abe');
 const chai = require('chai');
-
 const expect = chai.expect;
 
 describe('CP-ABE functionality', function() {

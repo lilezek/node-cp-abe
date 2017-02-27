@@ -24,6 +24,7 @@
   "homepage": "https://github.com/ezequiel-umu/node-cp-abe#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "node-gyp": "^3.5.0"
   }
 }

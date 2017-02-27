@@ -8,3 +8,5 @@ master_key
 priv_key
 *.node
 *.cpabe
+*.tar.gz
+*.log
