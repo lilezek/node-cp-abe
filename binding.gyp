@@ -7,10 +7,10 @@
       "cpabe-0.11/common.c"
     ],
     "include_dirs": [
-      "cpabe-0.11",
-      "libbswabe-0.9",
-      "pbc-0.5.14/include",
-      "pbc-0.5.14/.libs",
+      "<(module_root_dir)/cpabe-0.11",
+      "<(module_root_dir)/libbswabe-0.9",
+      "<(module_root_dir)/pbc-0.5.14/include",
+      "<(module_root_dir)/pbc-0.5.14/.libs",
       "/usr/include/glib-2.0/",
       "/usr/lib/x86_64-linux-gnu/glib-2.0/include"
     ],
