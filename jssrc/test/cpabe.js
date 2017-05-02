@@ -1,4 +1,4 @@
-const cpabe = require('../../cp-abe');
+const cpabe = require('../../cpabe');
 const chai = require('chai');
 const expect = chai.expect;
 

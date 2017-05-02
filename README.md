@@ -1,8 +1,11 @@
+# Dependencies
+This project depends on `gmp`, `glib`, `flex`, `bison`
+
 # CP-ABE bindings for NodeJS
 
 Here you can find bindings of CP-ABE suite for NodeJS. In order to make this
 project to work you will need `libswabe-0.9`, `pbc-0.5.14` and `cpabe-0.11`. These
-dependencies **will be downloaded and compiled automatically**. 
+dependencies **will be downloaded and compiled automatically**.
 
 ## Patches to bswabe, cpabe and pbc
 

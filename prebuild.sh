@@ -41,9 +41,15 @@ patch -R libbswabe-0.9/Makefile.in patches/libbswabe-0.9@Makefile.in.patch
 # Configure and compile
 
 cd pbc-0.5.14
-./configure
+./configure CFLAGS="-fPIC" CPPFLAGS="-fPIC"
 make
 
-cd ../libbswabe-0.9
-./configure
+cd ..
+ROOT=$(pwd)
+
+ls $ROOT/pbc-0.5.14/include
+ls $ROOT/pbc-0.5.14/.libs/
+
+cd libbswabe-0.9
+./configure --with-pbc-include=$ROOT/pbc-0.5.14/include --with-pbc-lib=$ROOT/pbc-0.5.14/.libs/
 make

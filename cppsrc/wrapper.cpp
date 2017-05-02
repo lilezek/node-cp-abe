@@ -9,7 +9,7 @@
 #include <iostream>
 
 #include <glib.h>
-#include <pbc/pbc.h>
+#include <pbc.h>
 
 
 extern "C" {
@@ -369,4 +369,4 @@ void init(v8::Local<v8::Object> exports) {
   NODE_SET_METHOD(exports, "decryptMessage", cpabe_decryptMessage);
 }
 
-NODE_MODULE(binding, init);
+NODE_MODULE(cpabe, init);
