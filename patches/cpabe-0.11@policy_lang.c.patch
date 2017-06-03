@@ -1,0 +1,4 @@
+2225c2225
+< 		*l = g_slist_append(*l, g_strdup(a));
+---
+> 		*l = g_slist_append(*l, a);

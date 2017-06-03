@@ -2,11 +2,15 @@ node_modules/
 cpabe-0.11/
 libbswabe-0.9/
 pbc-0.5.14/
+gmp-6.1.2/
 build/
 pub_key
 master_key
 priv_key
 *.node
 *.cpabe
-*.tar.gz
+*.tar.gz*
+*.tar.lz*
 *.log
+
+.vagrant

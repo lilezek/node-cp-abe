@@ -256,14 +256,25 @@ void cpabe_keygen(const v8::FunctionCallbackInfo<v8::Value>& args) {
   v8::Local<v8::Array> arr = args[2].As<v8::Array>();
 
   int num_attr = arr->Length();
-  char ** attr = (char**)malloc(sizeof(char*) * (num_attr+1));
-  attr[num_attr] = nullptr;
-
-  for (int i = 0; i < num_attr; i++) {
+  GSList* alist = 0;
+  int i;
+  for (i = 0; i < num_attr; i++) {
     v8::String::Utf8Value sentence(arr->Get(i)->ToString());
-    attr[i] = (char*)malloc(strlen(*sentence)+1);
-    strcpy(attr[i], *sentence);
+    parse_attribute(&alist, *sentence);
+    if (isDying()) {
+      isolate->ThrowException(v8::Exception::TypeError(v8::String::NewFromUtf8(isolate, lastError)));
+      return;
+    }
   }
+
+  int total_attr_num = g_slist_length(alist);
+  char** attr = (char**)calloc(sizeof(char*), total_attr_num + 1);
+
+  i = 0;
+  for (GSList* ap = alist; ap; ap = ap->next, i++) {
+    attr[i] = (char*)ap->data;
+  }
+  attr[total_attr_num] = nullptr;
 
   GByteArray * struct_pub = g_byte_array_new_take((guint8*)node::Buffer::Data(args[0]), node::Buffer::Length(args[0]));
   pub = bswabe_pub_unserialize(struct_pub, 0);
