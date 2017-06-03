@@ -267,6 +267,7 @@ describe('CP-ABE functionality', function () {
   })
 
   it('CP-ABE decryption with whole number attributes (inequality)', function () {
+    this.timeout(3000);
     var keys = cpabe.setup();
     var message = "hello world " + Math.random();
 
@@ -318,12 +319,13 @@ describe('CP-ABE functionality', function () {
   })
 
   it('CP-ABE encryption and decryption using example from paper', function () {
+    this.timeout(5000);
     var keys = cpabe.setup();
     var message = "security_report.pdf " + Math.random();
 
-    var policy = "(sysadmin and (hire_date < 946702800 or security_team)) or (business_staff and 2 of (executive_level >= 5, audit_group, strategy_team))"
+    var policy = "(sysadmin and (hire_date < 946702800 or security_team)) or (business_staff and 2 of (executive_level >= 5, audit_group, strategy_team))";
 
-    var hire_date = new Date(parseInt(Date.now() / 1000)).getSeconds()
+    var hire_date = new Date(parseInt(Date.now() / 1000)).getSeconds();
     var hire_date_attr = "hire_date = " + hire_date;
 
     var encrypted = cpabe.encryptMessage(keys.pubkey, policy, new Buffer(message));
