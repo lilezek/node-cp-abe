@@ -57,6 +57,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             apt-get -y -q install autoconf;
             apt-get -y -q install automake;
             apt-get -y -q install libtool;
+            apt-get -y -q install valgrind;
+            sudo npm install -g node-gyp
             "   
         end
 
@@ -75,7 +77,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         ncpabe.vm.provision "build_module", type: :shell do |shell|
            shell.inline = "
            cd /vagrant;
-           sudo npm install -g node-gyp
            node-gyp configure;
            node-gyp build;
            " 
@@ -84,7 +85,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         ncpabe.vm.provision "test_build", type: :shell do |shell|
             shell.inline = "
             cd /vagrant
-            cp build/Release/cp-abe.node jssrc/;
+            cp build/Release/cpabe.node jssrc/;
             npm install;
             npm test;
             "

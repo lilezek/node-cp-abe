@@ -37,6 +37,7 @@ patch -R cpabe-0.11/common.c patches/cpabe-0.11@common.c.patch
 patch -R cpabe-0.11/common.h patches/cpabe-0.11@common.h.patch
 patch -R cpabe-0.11/policy_lang.y patches/cpabe-0.11@policy_lang.y.patch
 patch -R libbswabe-0.9/Makefile.in patches/libbswabe-0.9@Makefile.in.patch
+patch -R cpabe-0.11/policy_lang.c patches/cpabe-0.11@policy_lang.c.patch
 
 # Configure and compile
 
